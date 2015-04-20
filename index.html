@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en-GB'>
+  <head>
+    <title>Ractive Games</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="js/ractive.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script = id="template", type="text/ractive">
+      <h2>Welcome to {{title}}!</h2>
+      <form id="newJoke">
+        <label for="setup">Tell me a joke:</label>
+        <textarea id="setup" value={{setup}}></textarea>
+        <label for="punch">...and the punchline:</label>
+        <textarea id="punch" value={{punch}}></textarea>
+        <button type="submit" on-click="add">Ha!</button>
+      </form>
+      <h4> {{jokes.length}} jokes:</h4>
+      {{#with joke}}
+        <p>{{setup}} {{punch}}</p>
+      {{/with}}
+    </script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
